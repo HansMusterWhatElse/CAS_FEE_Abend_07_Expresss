@@ -8,6 +8,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  var i = this;
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   });
@@ -20,3 +21,9 @@ io.on('connection', function(socket){
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
+
+// http://socket.io/docs/server-api/
+
+// // the following two will emit to all the sockets connected to `/`
+// io.sockets.emit('hi', 'everyone');
+// io.emit('hi', 'everyone'); // short form
