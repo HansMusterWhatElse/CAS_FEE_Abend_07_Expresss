@@ -38,7 +38,6 @@ function myDummyLogger( options ){
 
 //
 
-app.use(bodyParser.urlencoded());
 app.use(bodyParser.json())
 app.use(require("method-override")(methodOverride));
 app.use(myDummyLogger());

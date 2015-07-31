@@ -40,7 +40,7 @@ module.exports.showOrder = function(req, res)
         res.write("<p>Order-Number: " + order.id + "</p>");
         res.write("<p>Status: " + order.state + "</p>");
         if (order.state == "OK") {
-            res.write("<form action='/orders/" + order.id + "' method='post'><input type='hidden' name='_method'  value='delete'><input type='submit' value='Delete order'></form>");
+            res.write("<form action='/orders/" + order.id + "' method='post'><input type='hidden' name='_method' value='delete'><input type='submit' value='Delete order'></form>");
         }
     }
     res.write("<form action='/' method='get'><input type='submit' value='Zurueck zum start'></form>");
